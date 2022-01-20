@@ -1,6 +1,6 @@
 # stream2giratksip
 
-This container  handles streaming of any streamable source to Gira TKS IP Gateway
+This container  handles streaming of any streamable video source to Gira TKS IP Gateway
 
 ## Running with docker-compose
 
