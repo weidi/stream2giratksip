@@ -11,7 +11,7 @@ This container  handles streaming of any streamable source to Gira TKS IP Gatewa
 ```
 version: '3'
 services:
-  giratks:
+  stream2giratksip:
     image: toprock/stream2giratksip
     restart: always
     ports:
