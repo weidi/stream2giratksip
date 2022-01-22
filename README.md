@@ -7,7 +7,6 @@ This container  handles streaming of any streamable video source to Gira TKS IP 
 1. make sure you have docker and docker-compose installed
 2. copy docker-compose.yml locally
 3. edit the environment variables especially the Stream_URL
-4. For Unifi Cameras you need to change the Stream_URL and adapt the protocol and port from e.g. rtsps://192.168.1.1:7441/asdfasdfew22?enableSrtp to rtsp://192.168.1.1:7447/asdfasdfew22?enableSrtp
 
 ```
 version: '3'
@@ -23,3 +22,19 @@ services:
       RTSP_PORT: 554
       HTTP_PORT: 8090
 ```
+
+This will give you two outputs
+```
+#mpeg4 rtp stream 640x480 
+http://IPofDockerHost:8090/s0 
+
+#jpeg output 
+http://IPofDockerHost:8090/s0.jpg
+
+```
+
+## Camera Types
+
+### Unifi 
+
+For Unifi Cameras you need to change the Stream_URL and adapt the protocol and port from e.g. rtsps://192.168.1.1:7441/asdfasdfew22?enableSrtp to rtsp://192.168.1.1:7447/asdfasdfew22?enableSrtp
