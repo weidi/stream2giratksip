@@ -33,6 +33,13 @@ http://IPofDockerHost:8090/s0.jpg
 
 ```
 
+## Running with docker run
+This will give you same result as using the docker compose file
+
+```
+docker run -e RTSP_PORT=554 -e HTTP_PORT=8090 -e INPUT_STREAM_URL="http://192.168.3.2:9981/stream/channel.m4a" -p 554:554 -p 8090:8090 toprock/stream2giratksip
+```
+
 ## Camera Types
 
 ### Unifi 
