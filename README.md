@@ -1,6 +1,14 @@
 # stream2giratksip
 
-This container  handles streaming of any streamable video source to Gira TKS IP Gateway
+This container  handles streaming of any streamable video source to Gira TKS IP Gateway.
+Images are provided for armv7 arm64 and amd64 so it should fit most needs
+
+## Environment Variables
+
+Please use the three provided environment variables to configure the container.
+- INPUT_STREAM_URL: "http://192.168.3.2:9981/stream/channelid/738382740?profile=pass"
+- RTSP_PORT: 554 (optional with latest image)
+- HTTP_PORT: 8090 (optional with latest image)
 
 ## Running with docker-compose
 
@@ -39,6 +47,7 @@ This will give you same result as using the docker compose file
 ```
 docker run -e RTSP_PORT=554 -e HTTP_PORT=8090 -e INPUT_STREAM_URL="http://192.168.3.2:9981/stream/channel.m4a" -p 554:554 -p 8090:8090 toprock/stream2giratksip
 ```
+
 
 ## Camera Types
 
