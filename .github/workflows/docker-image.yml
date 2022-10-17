@@ -3,6 +3,12 @@ name: Docker Image CI
 on:
   push:
     branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "tag to be used on docker push"
+        required: true
+        default: "latest"
 
 jobs:
   docker:
@@ -24,4 +30,4 @@ jobs:
           context: "{{defaultContext}}:build"
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
-          tags: toprock/stream2giratksip:latest
+          tags: toprock/stream2giratksip:${{ github.event.inputs.tag }}
