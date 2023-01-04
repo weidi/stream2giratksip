@@ -31,6 +31,9 @@ services:
       HTTP_PORT: 8090
 ```
 
+4. run compose file by using docker-compose up or docker-compose up -d
+
+
 This will give you two outputs
 ```
 #mpeg4 rtp stream 640x480 
