@@ -2,7 +2,7 @@ version: '3'
 
 services:
   stream2giratksip:
-    image: toprock/stream2giratksip:1.0.4
+    image: toprock/stream2giratksip:1.0.5
     restart: always
     ports:
       - 554:554
