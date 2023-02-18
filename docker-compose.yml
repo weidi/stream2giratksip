@@ -9,5 +9,6 @@ services:
       - 8090:8090
     environment:
       INPUT_STREAM_URL: "http://192.168.3.2:9981/stream/channelid/738382740?profile=pass"
+      INPUT_STREAM_URL1: "http://192.168.3.2:9981/stream/channelid/738382740?profile=pass"
       RTSP_PORT: 554
       HTTP_PORT: 8090

@@ -3,6 +3,7 @@
 
 # Replace any environment variable in config file
 sed -i 's,ENV_INPUT_STREAM_URL,'"$INPUT_STREAM_URL"',g' /etc/ffserver.conf
+sed -i 's,ENV_INPUT_STREAM_URL1,'"$INPUT_STREAM_URL1"',g' /etc/ffserver.conf
 if [ $HTTP_PORT ]
 then
     sed -i 's,ENV_HTTP_PORT,'"$HTTP_PORT"',g' /etc/ffserver.conf
