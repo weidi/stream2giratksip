@@ -20,13 +20,16 @@ Please use the three provided environment variables to configure the container.
 version: '3'
 services:
   stream2giratksip:
-    image: toprock/stream2giratksip:1.0.4
+    image: toprock/stream2giratksip:latest
     restart: always
     ports:
       - 554:554
       - 8090:8090
     environment:
-      INPUT_STREAM_URL: "http://192.168.3.2:9981/stream/channelid/738382740?profile=pass"
+      #output to /s0(.jpg)
+      INPUT_STREAM_URL: "rtsp://192.168.1.1:7447/abdDEFCG?enableSrtp"
+      #Output to /s1(.jpg)
+      INPUT_STREAM_URL1: "rtsp://192.168.1.1:7447/gwRB95w1OVH5MnjS?enableSrtp"
       RTSP_PORT: 554
       HTTP_PORT: 8090
 ```
@@ -34,13 +37,20 @@ services:
 4. run compose file by using docker-compose up or docker-compose up -d
 
 
-This will give you two outputs
+This will give you four outputs
 ```
-#mpeg4 rtp stream 640x480 
+#mpeg4 rtp stream 640x480 from INPUT_STREAM_URL
 http://IPofDockerHost:8090/s0 
 
-#jpeg output 
+#jpeg output from INPUT_STREAM_URL
 http://IPofDockerHost:8090/s0.jpg
+
+#mpeg4 rtp stream 640x480 from INPUT_STREAM_URL1
+http://IPofDockerHost:8090/s1 
+
+#jpeg output from INPUT_STREAM_URL1
+http://IPofDockerHost:8090/s1.jpg
+
 
 ```
 
